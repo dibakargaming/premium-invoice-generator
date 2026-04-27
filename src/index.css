@@ -27,32 +27,57 @@ h1, h2, h3, .font-heading {
 
 .invoice-container {
   display: flex;
+  flex-direction: column;
   min-height: 100vh;
 }
 
+@media (min-width: 768px) {
+  .invoice-container {
+    flex-direction: row;
+  }
+}
+
 .sidebar {
-  width: 400px;
+  width: 100%;
   background: var(--bg-card);
-  border-right: 1px solid var(--border);
-  padding: 2rem;
-  overflow-y: auto;
+  border-bottom: 1px solid var(--border);
+  padding: 1.5rem;
   box-shadow: 4px 0 24px rgba(0,0,0,0.02);
+}
+
+@media (min-width: 768px) {
+  .sidebar {
+    width: 400px;
+    border-right: 1px solid var(--border);
+    border-bottom: none;
+    padding: 2rem;
+    overflow-y: auto;
+  }
 }
 
 .preview-area {
   flex: 1;
-  padding: 1.5rem; /* Reduced padding */
+  padding: 1-rem;
   background: #f1f5f9;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
+  overflow-x: auto;
   overflow-y: auto;
+}
+
+@media (min-width: 768px) {
+  .preview-area {
+    padding: 1.5rem;
+    justify-content: center;
+  }
 }
 
 /* Digital Invoice Styles */
 .invoice-paper {
   background: #fff;
   width: 210mm;
+  min-width: 210mm;
   height: 297mm; /* Fixed height for A4 */
   position: relative;
   box-shadow: 0 10px 40px rgba(0,0,0,0.1);
