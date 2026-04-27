@@ -223,7 +223,7 @@ const exportMap = () => {
 
 const InvoicePreview = ({ data }) => {
   const isAnuar = data.business === BusinessTypes.ANUAR;
-  const bgImage = isAnuar ? "/anwar_orig.jpeg" : "/shek_orig.jpeg";
+  const bgImage = isAnuar ? `${import.meta.env.BASE_URL}anwar_orig.jpeg` : `${import.meta.env.BASE_URL}shek_orig.jpeg`;
   
   return (
     <div className="invoice-paper" style={{ 
